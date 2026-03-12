@@ -60,7 +60,7 @@ end
 if _G.IsOpened then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "System TRX",
-        Text = "\239\191\189\217\133 \216\170\217\129\216\185\217\138\217\132 \216\167\217\132\216\179\217\131\216\177\216\168\216\170 \217\133\216\179\216\168\217\130\216\167\216\140 \216\167\216\185\216\175 \216\167\217\132\216\175\216\174\217\136\217\132 \217\132\216\170\216\180\216\186\217\138\217\132\217\135 \217\133\216\172\216\175\216\175\216\167",
+        Text = "Syarem TRX"
         Duration = 5
     })
     local vu1 = Instance.new("Sound", game.Workspace)
@@ -110,7 +110,7 @@ else
                 local v16 = Instance.new("TextLabel", v15)
                 v16.Size = UDim2.new(0.8, 0, 0.6, 0)
                 v16.Position = UDim2.new(0.1, 0, 0.2, 0)
-                v16.Text = "\239\191\189\217\133 \216\173\216\184\216\177\217\131 \217\133\217\134 \217\135\216\176\216\167 \216\167\217\132\216\179\217\131\216\177\216\168\216\170 \216\168\217\136\216\167\216\179\216\183\216\169 \216\167\217\132\217\133\216\167\217\132\217\131 \217\134\216\170\217\138\216\172\216\169 \216\179\217\136\216\161 \216\167\217\132\216\167\216\179\216\170\216\174\216\175\216\167\217\133. \217\132\216\183\217\132\216\168 \217\129\217\131 \216\167\217\132\216\173\216\184\216\177\216\140 \217\138\216\177\216\172\217\137 \217\129\216\170\216\173 \216\170\217\131\216\170 \216\185\217\132\217\137 \216\179\217\138\216\177\217\129\216\177 VR7."
+                v16.Text = "TRX"
                 v16.TextColor3 = Color3.fromRGB(255, 215, 0)
                 v16.TextScaled = true
                 v16.BackgroundTransparency = 1
@@ -255,7 +255,7 @@ else
     local vu44 = false
     local vu45 = {}
     local vu46 = workspace.CurrentCamera
-    local vu47 = "VR7 ON TOP"
+    local vu47 = "TRX ON TOP"
     local vu48 = pcall(function()
         assert(firesignal)
     end)
@@ -362,8 +362,8 @@ else
         return v84
     end
     local function vu94(p86)
-        local v87 = p86:match("[\239\191\189-\239\191\189][\239\191\189-\239\191\189]")
-        local v88, v89, v90 = p86:gmatch("[%z\1-\127\239\191\189-\239\191\189][\239\191\189-\239\191\189]*")
+        local v87 = p86:match("TRX")
+        local v88, v89, v90 = p86:gmatch("TRX")
         local v91 = {}
         while true do
             v90 = v88(v89, v90)
@@ -373,7 +373,7 @@ else
             if v90 == " " then
                 table.insert(v91, "  ")
             else
-                table.insert(v91, "\239\191\189" .. v90 .. "\239\191\189")
+                table.insert(v91, "TRX" .. v90 .. "TRX")
             end
         end
         if not v87 then
@@ -402,7 +402,7 @@ else
                     getgenv().online = tostring(v98)
                 end
             end
-            getgenv().VR7.Background.Home_Section.Announce_Label_Frame.Announce_Label.Text = "\239\191\189\217\133\217\138\216\185 \216\167\217\132\216\173\217\130\217\136\217\130 \217\133\216\173\217\129\217\136\216\184\216\169 \217\132\216\179\217\138\216\177\217\129\216\177 VR7\n\216\167\217\132\217\133\216\183\217\136\216\177\217\138\217\134 \216\186\217\138\216\177 \217\133\216\179\216\164\217\136\217\132\217\138\217\134 \216\185\217\134 \216\179\217\136\216\161 \216\167\217\132\216\167\216\179\216\170\216\174\216\175\216\167\217\133.\n\n\217\134\216\170\217\133\217\134\217\137 \216\167\217\134 \217\138\216\185\216\172\216\168\217\131 \216\167\217\132\216\179\217\131\216\177\216\168\216\170." .. "\n\n" .. tostring("\239\191\189\217\132\217\133\216\179\216\170\216\174\216\175\217\133\217\138\217\134: " .. getgenv().online .. " " .. "\239\191\189\216\179\216\170\216\174\216\175\217\133 \216\167\217\136\217\134\217\132\216\167\217\138\217\134" .. utf8.char(129310, 127995))
+            getgenv()TRX.Background.Home_Section.Announce_Label_Frame.Announce_Label.Text = "TRX" .. utf8.char(129310, 127995))
         end)
     end
     function Send(p99)
@@ -467,9 +467,9 @@ else
     function Execute(p106)
         if GetRank() and GetRank() ~= "Not Enabled" then
             game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(p106)
-            SendNotify("System VR7", "Executed " .. command, 5)
+            SendNotify("System TRX", "Executed " .. command, 5)
         else
-            SendNotify("System VR7", "\239\191\189\217\132\216\167\216\179\217\129 \216\167\217\132\217\133\216\167\216\168 \216\186\217\138\216\177 \217\133\216\175\216\185\217\136\217\133", 5)
+            SendNotify("System TRX", "TRX", 5)
         end
     end
     function RandomChar()
@@ -527,7 +527,7 @@ else
             v122 = v122 + 1
             local v124 = GetSofa()
             if not v124 then
-                SendNotify("System VR7", "\239\191\189\216\173\216\170\216\167\216\172 \217\131\217\134\216\168\216\169 \216\173\216\170\216\167 \216\170\217\130\216\175\216\177 \216\170\216\179\216\173\216\168", 5)
+                SendNotify("System TRX", "TRX", 5)
                 break
             end
             local v125 = nil
@@ -558,7 +558,7 @@ else
                 break
             end
             if v119.Character.Humanoid.Sit and v119.Character.Humanoid.SeatPart ~= v125 then
-                SendNotify("System VR7", "\239\191\189\216\167\217\138\217\133\217\131\217\134 \216\179\216\173\216\168 \216\167\217\132\216\182\216\173\217\138\216\169 \217\132\216\167\217\134\217\135 \217\130\216\167\216\185\216\175", 5)
+                SendNotify("System TRX", "TRX", 5)
                 break
             end
             if v124.Parent ~= game.Players.LocalPlayer.Character then
